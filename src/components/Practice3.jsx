@@ -4,6 +4,9 @@ export function Practice3() {
     const [item, setItem] = useState("")
     const [task, setTask] = useState([])
 
+
+    // console.log(task)
+
     const handleAdd = ()=>{
         const newTask = task.map((prev) => {
             return {...prev} 
@@ -22,11 +25,11 @@ export function Practice3() {
     const doneTask = (id) => {
         const done = task.map((data) => {
             if (data.id === id) {
-                data.isDone = !data.isDone
-                return data
+                data.isDone = !data.isDone    
             }
+            return data
         })
-       setTask([...task,done])
+       setTask(done)
     }
 
     const deleteTask = (id) => {
@@ -36,6 +39,15 @@ export function Practice3() {
             }
         })
         setTask(deletes)
+    }
+
+    const editTask = (id) => {
+        const edited = task.map((data) => {
+            if (data.id === id) {
+                return data.value = "hohoho"
+            }
+        })
+        // console.log(edited)
     }
 
     return (
@@ -62,8 +74,9 @@ export function Practice3() {
                             </div>}
                         
                         <div>
-                        <span onClick={()=>doneTask(data.id)}>✔️</span>
-                            <span onClick={()=>deleteTask(data.id)}>⛔</span>
+                            <span className="hover:cursor-pointer" onClick = {()=>editTask(data.id)}>✍️</span>
+                        <span className="hover:cursor-pointer" onClick={()=>doneTask(data.id)}>✔️</span>
+                            <span className="hover:cursor-pointer" onClick={()=>deleteTask(data.id)}>⛔</span>
                             </div>
                     </div>
                 )
