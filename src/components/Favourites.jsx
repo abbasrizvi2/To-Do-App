@@ -10,7 +10,7 @@ const Favourite = ({ Task, id }) => {
     
     const handleShow = () => {
         setShowFav(!showfav)
-    }
+    };
 
     const toggleFavourite = (id) => {                                    
         setFavourites((prevFavs) => {
