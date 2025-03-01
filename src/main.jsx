@@ -8,5 +8,6 @@ import {Practice3} from './components/Practice3'
 
 createRoot(document.getElementById('root')).render(
 
-    <Practice3/>
+    <Practice3 />
+    // <App/>
 )

@@ -89,8 +89,8 @@ const Practice = () => {
   
 
     useEffect(() => {
-        localStorage.setItem("lists", JSON.stringify(list))
-        localStorage.setItem("favourites", JSON.stringify(favourites))
+        localStorage.setItem("lists", JSON.stringify(list)) //humri list array me h use string me convert krna h yaha pe
+        localStorage.setItem("favourites", JSON.stringify(favourites)) //isiliye stringify kiya
     },[list,favourites])
     
   return (

@@ -16,10 +16,10 @@ const Favourite = ({ Task, id }) => {
         setFavourites((prevFavs) => {
             if (prevFavs.some((task) => task.id === id)) {
                 // Remove if already in favourites
-                return prevFavs.filter((task) => task.id !== id); //--> false krdo return yaha
+                return prevFavs.filter((task) => task.id !== id); //--> jo item isme already h usko false return kro toh wo flter nhi hoga and new aray jo ban rha h usme nhi jaega
             } else {
                 // Add if not in favourites
-                const favouriteOnes = Task.filter((task) => task.id === id); //filter because ye ek particular item deta hai
+                const favouriteOnes = Task.filter((task) => task.id === id); //filter because ye ek new array dega 
                 return [...favouriteOnes ,...prevFavs];
             }
         });
