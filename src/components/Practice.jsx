@@ -34,7 +34,8 @@ const Practice = () => {
       if (task.id === id) {
         task.isDone = !task.isDone;
         }
-        return {...task}     // ***      ___ Remember it to return
+        return {...task}  // ***      ___ Remember it to return
+        // return task     same thing as above
     });
     setList(selectedItem);
   };
